@@ -1,11 +1,15 @@
 import {EventEmitter} from "events";
 import Viewport from "./Viewport";
+import fragment from "../../glsl/fragment.glsl";
 
 class Renderer extends EventEmitter{
     constructor() {
         super();
 
         this.el = document.createElement("canvas");
+        this.ctx = this.el.getContext('webgl');
+
+        // this.ctx.
 
         document.body.appendChild(this.el);
 
@@ -13,7 +17,6 @@ class Renderer extends EventEmitter{
     }
 
     onResize({width, height}){
-        console.log(width, height);
         this.el.width = width;
         this.el.height = height;
     }

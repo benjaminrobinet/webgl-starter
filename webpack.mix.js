@@ -16,10 +16,22 @@ mix.js('src/app.js', 'public/dist/bundle.js')
     .sass('src/app.scss', 'public/dist');
 
 mix.browserSync({
-    proxy: 'http://localhost/webgl-starter/public/'
+    proxy: 'http://webgl.dev/',
+    open: false
 });
 
 mix.sourceMaps();
+
+mix.webpackConfig({
+    module: {
+        rules: [
+            {
+                test: /\.glsl$/,
+                loader: 'webpack-glsl-loader'
+            }
+        ]
+    }
+});
 
 mix.disableNotifications();
 
