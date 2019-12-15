@@ -12,7 +12,7 @@ let mix = require('laravel-mix');
  */
 
 mix.js('src/app.js', 'public/dist/bundle.js')
-    .babel(['public/dist/bundle.js'], 'public/dist/bundle.es5.js')
+    // .babel(['public/dist/bundle.js'], 'public/dist/bundle.es5.js')
     .sass('src/app.scss', 'public/dist');
 
 mix.browserSync({
